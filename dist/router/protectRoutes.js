@@ -1,0 +1,23 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const interview_1 = __importDefault(require("./interview"));
+const batch_1 = __importDefault(require("./batch"));
+const student_1 = __importDefault(require("./student"));
+const result_1 = __importDefault(require("./result"));
+const user_1 = __importDefault(require("./user"));
+const state_1 = require("../controllers/state");
+const veryJWT_1 = __importDefault(require("../middlewares/veryJWT"));
+const adminCheck_1 = __importDefault(require("../middlewares/adminCheck"));
+const router = express_1.default.Router();
+router.use(veryJWT_1.default);
+router.use('/interview', interview_1.default);
+router.use("/batch", batch_1.default);
+router.use("/student", student_1.default);
+router.use("/result", result_1.default);
+router.use("/user", adminCheck_1.default, user_1.default);
+router.get("/state", state_1.getState);
+exports.default = router;
