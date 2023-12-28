@@ -16,7 +16,7 @@ const port = process.env.PORT ? Number(process.env.PORT) : 1337;
     const app = (0, express_1.default)();
     app.use(logger_1.logExpressError);
     app.use((0, cors_1.default)({
-        origin: "http://localhost:5173",
+        origin: "https://student-insight-client.vercel.app/",
         methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
         credentials: true,
         allowedHeaders: ["Content-Type", "Authorization"],

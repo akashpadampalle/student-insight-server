@@ -60,7 +60,7 @@ export const login = async (req: Request, res: Response) => {
         // create a secure cookie with refresh token
         res.cookie('jwt', refreshToken, {
             httpOnly: true, // accessible only by web browser
-            // secure: true, // https
+            secure: true, // https
             sameSite: 'none', // cross-site cookie
             maxAge: 1000 * 60 * 60 * 24 * 7, // cookie-expiry: set to match refresh token
         });
