@@ -16,7 +16,7 @@ connectDB()
         app.use(logExpressError)
         app.use(cors(
             {
-                origin: "https://student-insight-client.vercel.app/",
+                origin: "https://student-insight-client.vercel.app",
                 methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
                 credentials: true,
                 allowedHeaders: ["Content-Type", "Authorization"],
