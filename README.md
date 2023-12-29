@@ -25,6 +25,8 @@ this bankend server is created as Coding Ninjas Full Stack Skill Test
 
 > change frontend url in cors `src -> index.ts`
 
+> create an admin user in your database to manage other users
+
 ## Usage
 
 > start server
